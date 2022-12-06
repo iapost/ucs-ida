@@ -12,11 +12,10 @@ public class UCSNode implements Comparable<UCSNode> {
 		this.path = "";
 	}
 
-	//Used in PriorityQueue holding UCSNode objects. The UCSNode with less cost is given priority.
 	public int compareTo(UCSNode node) {
+		//The UCSNode with less cost is given priority.
 		//Multiply with 10 to make sure that a small difference between the costs will not be ignored due to the casting to int
-        return (int)((this.currentCost - node.currentCost) * 10);
-    }
-	
+        	return (int)((this.currentCost - node.currentCost) * 10);
+    	}
 
 }
