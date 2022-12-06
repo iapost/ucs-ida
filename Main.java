@@ -10,22 +10,6 @@ public class Main {
 	//Global variable holding the information of the graph formed by the roads
 	static HashMap<String, Vertex> graph=new HashMap<String, Vertex>();
 	
-	//Used in PriorityQueue holding Vertex objects. The Vertex with less cost is given priority.
-	static Comparator<Vertex> MinCostVertexComparator = new Comparator<Vertex>(){
-		public int compare(Vertex o1, Vertex o2) {
-			//Multiply with 10 to make sure that a small difference between the costs will not be ignored due to the casting to int
-			return (int)((o1.minCostToDest - o2.minCostToDest) * 10);
-		}
-	};
-	
-	//Used in PriorityQueue holding IDANode objects. The IDANode with less total estimated cost is given priority
-	static Comparator<IDANode> MinCostIDAComparator = new Comparator<IDANode>(){
-		public int compare(IDANode o1, IDANode o2) {
-			//Multiply with 10 to make sure that a small difference between the costs will not be ignored due to the casting to int
-			return (int)((o1.totalEstCost - o2.totalEstCost) * 10);
-		}
-	};
-	
 	/*
 	 * Executes Uniform Cost Search algorithm and prints the best path found.
 	 * 
@@ -160,7 +144,7 @@ public class Main {
 		IDAResult res = new IDAResult();
 		
 		//Initialize a priority queue to hold the vertices to be checked 
-		PriorityQueue<IDANode> minHeap = new PriorityQueue<IDANode>(MinCostIDAComparator);
+		PriorityQueue<IDANode> minHeap = new PriorityQueue<IDANode>();
 		
 		//Check if we reached the destination
 		if(source.equals(destination)) {
@@ -364,7 +348,7 @@ public class Main {
 		HashSet<String> roadsChecked = new HashSet<String>();
 		
 		//A queue to hold vertices whose cost was updated
-		PriorityQueue<Vertex> vertToCheck = new PriorityQueue<Vertex>(MinCostVertexComparator);
+		PriorityQueue<Vertex> vertToCheck = new PriorityQueue<Vertex>();
 		
 		//Initialize queue with the destination vertex
 		vertToCheck.add(graph.get(destination));
