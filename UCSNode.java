@@ -1,10 +1,12 @@
+/** @file UCSNode.java */
+
 /*
  * Helper class to hold information about a vertex to be examined during UCS algorithm
  */
 public class UCSNode implements Comparable<UCSNode> {
-	public String nodeName; //the name of the vertex
-	public double currentCost; //the cost to reach this vertex from the source
-	public String path; //the path to reach this vertex from the source
+	public String nodeName; /**< the name of the vertex */
+	public double currentCost; /**< the cost to reach this vertex from the source */
+	public String path; /**< the path to reach this vertex from the source */
 	
 	public UCSNode(String nodeName, double currentCost) {
 		this.nodeName = nodeName;

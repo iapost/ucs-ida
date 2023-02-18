@@ -1,3 +1,5 @@
+/** @file Main.java */
+
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -7,10 +9,10 @@ import java.util.Vector;
 
 public class Main {
 	
-	//Global variable holding the information of the graph formed by the roads
+	/** Global variable holding the information of the graph formed by the roads */
 	static HashMap<String, Vertex> graph=new HashMap<String, Vertex>();
 	
-	/*
+	/**
 	 * Executes Uniform Cost Search algorithm and prints the best path found.
 	 * 
 	 * @param source the name of the starting vertex
@@ -88,7 +90,7 @@ public class Main {
 	}
 	
 	
-	/*
+	/**
 	 * Executes Iterative Deepening A* algorithm and prints the best path found
 	 * 
 	 * @param source the name of the vertex to begin
@@ -127,7 +129,7 @@ public class Main {
 	}
 	
 	
-	/*
+	/**
 	 * Recursive helper function for IDA* algorithm that searches for a path between two vertices with a given cost limit
 	 * 
 	 * @param source the name of the vertex to begin
@@ -219,7 +221,7 @@ public class Main {
 	}
 	
 	
-	/*
+	/**
 	 * Loads the predicted traffic for each road into a HashMap
 	 * 
 	 * @param input a Scanner from which to read the information
@@ -274,7 +276,7 @@ public class Main {
 	}
 	
 	
-	/*
+	/**
 	 * Loads the information about roads and vertices into the HashMap graph
 	 * 
 	 * @param input a Scanner from which to read the information
@@ -335,7 +337,7 @@ public class Main {
 	}
 	
 	
-	/*
+	/**
 	 * Uses Dijkstra's algorithm and the "low traffic" cost of each road to calculate the minimum cost to travel from each vertex to the destination. 
 	 * Stores calculated cost to minCostToDest variable of each vertex. This heuristic is used for IDA* algorithm.
 	 * 
@@ -386,7 +388,7 @@ public class Main {
 	}
 	
 	
-	/*
+	/**
 	 * The main function. It reads the information from standard input and executes UCS and IDA* algorithms.
 	 */
 	public static void main(String[] args) {
